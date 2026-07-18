@@ -10,10 +10,16 @@ public abstract class Car {
     }
 
     public void startCar(){
-        System.out.println("Car is starting");
+        System.out.println(typeOfCar() + " is starting");
+        engine.start();
     }
     public void stopCar(){
-        System.out.println("Car is stopping");
+        System.out.println(typeOfCar()+ "is stopping");
+        engine.stop();
     }
-    public abstract void typeOfCar();
+    public abstract String typeOfCar();
+
+    public String getEngineType(){
+        return engine.displayType();
+    }
 }
