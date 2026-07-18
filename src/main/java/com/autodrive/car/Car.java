@@ -14,7 +14,7 @@ public abstract class Car {
         engine.start();
     }
     public void stopCar(){
-        System.out.println(typeOfCar()+ "is stopping");
+        System.out.println(typeOfCar()+ " is stopping");
         engine.stop();
     }
     public abstract String typeOfCar();

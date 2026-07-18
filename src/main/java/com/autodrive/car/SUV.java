@@ -10,7 +10,6 @@ public class SUV extends Car{
     }
     @Override
     public String typeOfCar() {
-
         return "SUV";
     }
 }

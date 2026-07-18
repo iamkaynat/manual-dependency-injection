@@ -1,17 +1,31 @@
 package main.java.com.autodrive.app;
 
+import main.java.com.autodrive.car.Car;
+import main.java.com.autodrive.car.SUV;
+import main.java.com.autodrive.car.Sedan;
+import main.java.com.autodrive.engine.DieselEngine;
+import main.java.com.autodrive.engine.Engine;
+import main.java.com.autodrive.engine.PetrolEngine;
+import main.java.com.autodrive.garage.Garage;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Engine petrolEngine = new PetrolEngine();
+        Engine dieselEngine = new DieselEngine();
+       //Creating a Car object with Sedan type
+        Car sedan = new Sedan(petrolEngine);
+        Car suv = new SUV(dieselEngine);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Garage garage = new Garage();
+        garage.addCar(suv);
+        garage.addCar(sedan);
+        sedan.startCar();
+        sedan.stopCar();
+        suv.startCar();
+        suv.stopCar();
+        garage.startAllCars();
+        garage.stopAllCars();
     }
 }
